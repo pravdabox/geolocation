@@ -26,7 +26,7 @@ start() {
         echo "GRANT ALL PRIVILEGES ON ip2location.* TO 'ip2location'@'localhost';" | /usr/bin/mysql -u root --password=root
 
         # import data
-        ( /usr/bin/xz -d -c /opt/pravdabox/ip2location_db5.sql.xz | /usr/bin/mysql -u ip2location --password=ip2location ip2location ) &
+        ( /usr/bin/xz -d -c /opt/pravdabox/ip2location_db5.sql.xz | /usr/bin/mysql -u ip2location --password=ip2location ip2location && echo > /tmp/mapimport-done.status ) &
     fi
 }
 
