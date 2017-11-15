@@ -7,7 +7,7 @@ start() {
     # wait 5s for all interfaces to become ready
     sleep 5
 
-    if [ $(echo "select count(ip_from) from ip2location_db5;" | mysql -u ip2location --password=ip2location ip2location 2> /dev/null | grep 3499630 | wc -l) -eq 0 ]; then
+    if [ $(echo "select count(ip_from) from ip2location_db5;" | mysql -u ip2location --password=ip2location ip2location 2> /dev/null | grep 3304608 | wc -l) -eq 0 ]; then
         # set up mysql
         /etc/init.d/mysqld stop
         mkdir /tmp/mysql
